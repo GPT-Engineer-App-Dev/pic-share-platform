@@ -1,17 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const MyPhotos = () => {
-  // Placeholder data for user's photos
-  const myPhotos = [
-    {
-      photo: "/placeholder.svg",
-      description: "A beautiful sunset",
-    },
-    {
-      photo: "/placeholder.svg",
-      description: "Mountain view",
-    },
-  ];
+  const [myPhotos, setMyPhotos] = useState([]);
+
+  useEffect(() => {
+    const storedPhotos = JSON.parse(localStorage.getItem("myPhotos")) || [];
+    setMyPhotos(storedPhotos);
+  }, []);
 
   return (
     <div className="space-y-4">
