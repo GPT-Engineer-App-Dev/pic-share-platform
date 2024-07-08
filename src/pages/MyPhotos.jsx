@@ -1,15 +1,13 @@
 import React from "react";
 
-const Index = () => {
-  // Placeholder data for the feed
-  const feed = [
+const MyPhotos = () => {
+  // Placeholder data for user's photos
+  const myPhotos = [
     {
-      username: "user1",
       photo: "/placeholder.svg",
       description: "A beautiful sunset",
     },
     {
-      username: "user2",
       photo: "/placeholder.svg",
       description: "Mountain view",
     },
@@ -17,11 +15,10 @@ const Index = () => {
 
   return (
     <div className="space-y-4">
-      <h1 className="text-3xl font-bold text-center">PhotoShare</h1>
+      <h1 className="text-2xl font-bold text-center">My Photos</h1>
       <div className="space-y-4">
-        {feed.map((item, index) => (
+        {myPhotos.map((item, index) => (
           <div key={index} className="border p-4 rounded-lg shadow-sm">
-            <h2 className="text-xl font-semibold">{item.username}</h2>
             <img
               src={item.photo}
               alt={item.description}
@@ -35,4 +32,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default MyPhotos;
